@@ -1,6 +1,11 @@
 import os
 import argparse
 import itertools
+import joblib
+import matplotlib.pyplot as plt
+
+
+from azureml.core import Dataset, Run
 
 from sklearn import datasets
 from sklearn.svm import SVC
@@ -20,15 +25,15 @@ def main(args):
     os.makedirs('outputs', exist_ok=True)
     
     # Log arguments
-   dataset = pd.read_csv('data.txt')
+   datasset = pd.read_csv('data.txt')
 
 
-    dataset.shape
-    dataset.head()
-    dataset.describe()
+    datasset.shape
+    datasset.head()
+    datasset.describe()
 
-    X = dataset.iloc[:, :-1].values
-    y = dataset.iloc[:, 8].values
+    X = datasset.iloc[:, :-1].values
+    y = datasset.iloc[:, 8].values
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
