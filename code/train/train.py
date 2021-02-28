@@ -1,10 +1,6 @@
 import os
 import argparse
 import itertools
-import numpy as np
-import pandas as pd
-import joblib
-import matplotlib.pyplot as plt
 
 from sklearn import datasets
 from sklearn.svm import SVC
