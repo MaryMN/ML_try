@@ -17,7 +17,7 @@ from sklearn.model_selection import train_test_split
 from sklearn import metrics
 
 
-
+run = Run.get_context()
 
 def main(args):
     # create the outputs folder
