@@ -78,39 +78,39 @@ def main(args):
     
 
 
-    datasett = pd.read_csv('Mydata.txt', sep=",", header=None)
-    print(datasett.head())
+#     datasett = pd.read_csv('Mydata.txt', sep=",", header=None)
+#     print(datasett.head())
 
-    datam = preprocessing.normalize(datatasett)
+#     datam = preprocessing.normalize(datatasett)
 
-    datasett.shape
-    datasett.head()
-    datasett.describe()
+#     datasett.shape
+#     datasett.head()
+#     datasett.describe()
 
-    X = dataset.iloc[:, [2,3,4,5,6]].values
-    y = dataset.iloc[:, 8].values
+#     X = dataset.iloc[:, [2,3,4,5,6]].values
+#     y = dataset.iloc[:, 8].values
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+#     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
 
-    regressor = LinearRegression()
-    regressor.fit(X_train, y_train)
+#     regressor = LinearRegression()
+#     regressor.fit(X_train, y_train)
 
-    print(regressor.intercept_)
+#     print(regressor.intercept_)
 
-    print(regressor.coef_)
+#     print(regressor.coef_)
 
-    y_pred = regressor.predict(X_test)
+#     y_pred = regressor.predict(X_test)
 
-    df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
-    df
-    print(df.head())
+#     df = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
+#     df
+#     print(df.head())
 
 
-    print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
-    print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
-    print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
-    print("Training set {:.2f}".format(regressor.score(X_train, y_train)))
-    print("Test set {:.2f}".format(regressor.score(X_test, y_test)))
+#     print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
+#     print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
+#     print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
+#     print("Training set {:.2f}".format(regressor.score(X_train, y_train)))
+#     print("Test set {:.2f}".format(regressor.score(X_test, y_test)))
     #     # Log arguments
     run.log('Kernel type', np.str(args.kernel))
     run.log('Penalty', np.float(args.penalty))
