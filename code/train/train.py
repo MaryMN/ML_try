@@ -78,14 +78,14 @@ def main(args):
     
 
 
-    dataset = pd.read_csv('data.txt', sep=",", header=None)
-    print(dataset.head())
+    datasett = pd.read_csv('Mydata.txt', sep=",", header=None)
+    print(datasett.head())
 
-    data = preprocessing.normalize(datataset)
+    datam = preprocessing.normalize(datatasett)
 
-    dataset.shape
-    dataset.head()
-    dataset.describe()
+    datasett.shape
+    datasett.head()
+    datasett.describe()
 
     X = dataset.iloc[:, [2,3,4,5,6]].values
     y = dataset.iloc[:, 8].values
