@@ -78,7 +78,7 @@ def main(args):
     
 
 
-    dataset = pd.read_csv('D:\lab1\lab3\Datasets\data.txt')
+    dataset = pd.read_csv('data.txt')
 
 
     dataset.shape
