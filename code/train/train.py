@@ -78,8 +78,10 @@ def main(args):
     
 
 
-    dataset = pd.read_csv('https://github.com/MaryMN/ML_try/blob/master/code/train/data.txt')
+    dataset = pd.read_csv('data.txt', sep=",", header=None)
+    print(dataset.head())
 
+    data = preprocessing.normalize(datataset)
 
     dataset.shape
     dataset.head()
