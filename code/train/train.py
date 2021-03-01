@@ -1,4 +1,4 @@
-  
+ 
 import os
 import argparse
 import itertools
@@ -78,7 +78,7 @@ def main(args):
     
 
 
-    dataset = pd.read_csv('data.txt')
+    dataset = pd.read_csv('D:\lab1\lab3\Datasets\data.txt')
 
 
     dataset.shape
@@ -107,8 +107,8 @@ def main(args):
     print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, y_pred))
     print('Mean Squared Error:', metrics.mean_squared_error(y_test, y_pred))
     print('Root Mean Squared Error:', np.sqrt(metrics.mean_squared_error(y_test, y_pred)))
-    print("Training set {:.2f}".format(linear_model.score(X_train, y_train)))
-    print("Test set {:.2f}".format(linear_model.score(X_test, y_test)))
+    print("Training set {:.2f}".format(regressor.score(X_train, y_train)))
+    print("Test set {:.2f}".format(regressor.score(X_test, y_test)))
     #     # Log arguments
 #     run.log('Kernel type', np.str(args.kernel))
 #     run.log('Penalty', np.float(args.penalty))
@@ -152,8 +152,8 @@ def main(args):
 #     log_confusion_matrix(cm, labels)
     
     # files saved in the "outputs" folder are automatically uploaded into run history
-    joblib.dump(svm_model, os.path.join('outputs', args.modelname))
-    run.log('Model Name', np.str(args.modelname))
+    # joblib.dump(svm_model, os.path.join('outputs', args.modelname))
+    # run.log('Model Name', np.str(args.modelname))
 
 
 def parse_args():
