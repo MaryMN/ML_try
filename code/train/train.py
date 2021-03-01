@@ -21,10 +21,10 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
 def log_confusion_matrix_image(cm, labels, normalize=False, log_name='confusion_matrix', title='Confusion matrix', cmap=plt.cm.Blues):
-    '''
-    This function prints and plots the confusion matrix.
-    Normalization can be applied by setting `normalize=True`.
-    '''
+#     '''
+#     This function prints and plots the confusion matrix.
+#     Normalization can be applied by setting `normalize=True`.
+#     '''
     if normalize:
         cm = cm.astype('float') / cm.sum(axis = 1)[:, np.newaxis]
         print('Normalized confusion matrix')
@@ -153,7 +153,7 @@ def main(args):
     cm = confusion_matrix(y_test, svm_predictions, labels_numbers)
     log_confusion_matrix(cm, labels)
     
-    files saved in the "outputs" folder are automatically uploaded into run history
+#     files saved in the "outputs" folder are automatically uploaded into run history
     joblib.dump(svm_model, os.path.join('outputs', args.modelname))
     run.log('Model Name', np.str(args.modelname))
 
